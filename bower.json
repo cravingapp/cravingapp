@@ -1,0 +1,11 @@
+{
+  "name": "cravingapp",
+  "version": "0.0.0",
+  "authors": [
+    "Jorge Romero <romeroqj@gmail.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.3.0"
+  }
+}
