@@ -1,2 +1,3 @@
-app.controller('CravingController', function($scope) {
+app.controller('CravingController', function($scope) { 
+
 });

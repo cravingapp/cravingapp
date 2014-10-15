@@ -3,16 +3,31 @@
 body {
     font-family: 'danielblack';
 }
-.craving {
+
+p {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.craving-middle, .craving-top {
     text-align: center;
     font-size: 3rem;
+}
+
+.craving-middle {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
 
-.craving input {
+.craving-top {
+    margin: 0 auto;
+    display: block;
+}
+
+.craving-middle input, .craving-top input {
     width: 250px;
     outline: none;
     border: none;
@@ -47,3 +62,51 @@ body {
   height: 100px;
   display: none;
 }
+
+.question {
+  margin-top: 100px;
+}
+
+.emphasis {
+  color: #00AE8D;
+  font-size: 1.7rem;
+}
+
+.indicator-box {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.indicator {
+    margin: 0;
+    text-align: center;
+}
+
+.image {
+  display: block;
+  margin: 0 auto;
+  width: 40%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* 
+FIX: border-image in the time box
+FIX: center .indicator boxes
+*/
+
+/*
+.indicator:nth-child(2) {
+  -webkit-border-image: url(../img/line.svg) 30 100 stretch;
+  -o-border-image: url(../img/line.svg) 30 100 stretch;
+  border-image: url(../img/line.svg) 30 100 stretch;
+}
+*/
+
+
+
