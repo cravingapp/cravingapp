@@ -86,6 +86,7 @@ p {
   display: block;
   margin: 0 auto;
   width: 40%;
+  height: 120px;
 }
 
 img {
@@ -93,6 +94,24 @@ img {
   height: 100%;
 }
 
+.money-unselected {
+  background: url(/img/money.svg) center top no-repeat;
+}
+.money-selected {
+  background: url(/img/moneySelected.svg) center top no-repeat;
+}
+.time-unselected {
+  background: url(/img/time.svg) center top no-repeat;
+}
+.time-selected {
+  background: url(/img/timeSelected.svg) center top no-repeat;
+}
+.frequency-unselected {
+  background: url(/img/frequency.svg) center top no-repeat;
+}
+.frequency-selected {
+  background: url(/img/frequencySelected.svg) center top no-repeat;
+}
 
 
 /* 

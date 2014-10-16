@@ -10,20 +10,17 @@
   
 <div class="grid indicator-box">
   <div class="grid__col grid__col--4-of-12 indicator">
-  	<div class="image money">
-  	  <img src="img/money.svg">
+  	<div class="image money-{{ moneyState }}" ng-click="select('money')">
     </div>
     how much
   </div>
   <div class="grid__col grid__col--4-of-12 indicator">
-  	<div class="image time">
-	    <img src="img/time.svg">
+  	<div class="image time-{{ timeState }}" ng-click="select('time')">
     </div>
     how long
   </div>
   <div class="grid__col grid__col--4-of-12 indicator">
-    <div class="image frequency">
-      <img src="img/frequency.svg">
+    <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
     </div>
     how often
   </div>
