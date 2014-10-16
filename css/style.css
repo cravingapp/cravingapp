@@ -63,21 +63,23 @@ p {
   display: none;
 }
 
+/*
 .question {
   margin-top: 100px;
 }
+*/
 
 .emphasis {
   color: #00AE8D;
   font-size: 1.7rem;
 }
 
-.indicator-box {
+.indicators-box {
   margin: 0 auto;
   width: 60%;
 }
 
-.indicator {
+.icon, question {
     margin: 0;
     text-align: center;
 }
@@ -87,6 +89,10 @@ p {
   margin: 0 auto;
   width: 40%;
   height: 120px;
+}
+
+.icon:hover {
+    opacity: .5;
 }
 
 img {
@@ -113,6 +119,28 @@ img {
   background: url(/img/frequencySelected.svg) center top no-repeat;
 }
 
+.approx {
+  margin-left: 40px;
+  float: left;
+  font-size: 1.4em;
+}
+
+.qty, .controls {
+  font-family: 'Lato';
+  font-weight: 400;
+  color: rgb(46, 125, 225);
+}
+
+.qty {
+  margin-left: 5px;
+}
+
+.controls {
+  margin-top: -1px;
+  margin-left: 10px;
+  display: inline-block;
+  font-size: 1.2em;
+}
 
 /* 
 FIX: border-image in the time box

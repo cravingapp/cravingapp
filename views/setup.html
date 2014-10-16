@@ -7,23 +7,42 @@
     <p class="question">When you {{ craving }}, what are you <span class="emphasis">not okay</span> with?</p>
   </div>
 </div>
-  
-<div class="grid indicator-box">
-  <div class="grid__col grid__col--4-of-12 indicator">
-  	<div class="image money-{{ moneyState }}" ng-click="select('money')">
-    </div>
-    how much
-  </div>
-  <div class="grid__col grid__col--4-of-12 indicator">
-  	<div class="image time-{{ timeState }}" ng-click="select('time')">
-    </div>
-    how long
-  </div>
-  <div class="grid__col grid__col--4-of-12 indicator">
-    <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
-    </div>
-    how often
-  </div>
-</div>
 
+<div class="indicators-box">
+  <div class="grid icons">
+    <div class="grid__col grid__col--4-of-12 icon">
+      <div class="image money-{{ moneyState }}" ng-click="select('money')">
+      </div>
+    </div>
+    <div class="grid__col grid__col--4-of-12 icon">
+      <div class="image time-{{ timeState }}" ng-click="select('time')">
+      </div>
+    </div>
+    <div class="grid__col grid__col--4-of-12 icon">
+      <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
+      </div>
+    </div>
+  </div> <!-- end of .icons -->
+  <div class="grid questions">
+    <div class="grid__col grid__col--4-of-12 question">
+      <p>how much</p>
+      <p>around <span class="qty">&plus; &minus;</span></p>
+    </div>
+    <div class="grid__col grid__col--4-of-12 question">
+      <p>how long</p>
+      <div class="approx">
+      	around
+        <span class="qty">$25</span>
+      </div>
+      <div class="controls">
+        <div class="plus">&plus;</div>
+        <div class="minus">&minus;</div>
+      </div>
+    </div>
+    <div class="grid__col grid__col--4-of-12 question">
+      <p>how often</p>
+      <p>every <span class="qty">&plus; &minus;</span></p>
+    </div>
+  </div> <!-- end of .questions -->
+</div> <!-- end of .indicators-box -->
 
