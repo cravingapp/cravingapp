@@ -142,6 +142,10 @@ img {
   font-size: 1.2em;
 }
 
+.plus, .minus {
+    cursor: pointer;
+}
+
 /* 
 FIX: border-image in the time box
 FIX: center .indicator boxes

@@ -28,22 +28,22 @@
       <p>how much</p>
       <div class="approx">
         around
-        <span class="qty">$25</span>
+        <span class="qty" ng-model="money">{{ money | currency}}</span>
       </div>
       <div class="controls">
-        <div class="plus">&plus;</div>
-        <div class="minus">&minus;</div>
+        <div class="plus" ng-click="modify('more', 'money')">&plus;</div>
+        <div class="minus" ng-click="modify('less', 'money')">&minus;</div>
       </div>
     </div>
     <div class="grid__col grid__col--4-of-12 question">
       <p>how long</p>
       <div class="approx">
       	around
-        <span class="qty">1h 30m</span>
+        <span class="qty" ng-model="time">{{ time | HrsMins }}</span>
       </div>
       <div class="controls">
-        <div class="plus">&plus;</div>
-        <div class="minus">&minus;</div>
+        <div class="plus" ng-click="modify('more', 'time')">&plus;</div>
+        <div class="minus" ng-click="modify('less', 'time')">&minus;</div>
       </div>
     </div>
 
@@ -51,11 +51,11 @@
       <p>how often</p>
       <div class="approx">
         every
-        <span class="qty">hour</span>
+        <span class="qty" ng-model="frequency">{{ frequency }}</span>
       </div>
       <div class="controls">
-        <div class="plus">&plus;</div>
-        <div class="minus">&minus;</div>
+        <div class="plus" ng-click="modify('more', 'frequency')">&plus;</div>
+        <div class="minus" ng-click="modify('less', 'frequency')">&minus;</div>
       </div>
     </div>
   </div> <!-- end of .questions -->
