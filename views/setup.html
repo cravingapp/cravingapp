@@ -1,63 +1,76 @@
-<div class="craving-middle">I am craving to <input type="text" placeholder="ex. eat out" dynamicInput="" ng-model="craving"></div>
-
-<div class="craving-top">I am craving to <input type="text" placeholder="ex. eat out" dynamicInput="" ng-model="craving"></div>
-
-<div class="grid">
-  <div class="grid_col grid__col--10-of-12 grid__col--centered">
-    <p class="question">When you {{ craving }}, what are you <span class="emphasis">not okay</span> with?</p>
-  </div>
+<div class="header">
+  <div class="craving-middle">I am craving to <input type="text" placeholder="ex. eat out" dynamicInput="" ng-model="craving"></div>
+  <div class="craving-top">I am craving to <input type="text" placeholder="ex. eat out" dynamicInput="" ng-model="craving"></div>
 </div>
 
-<div class="indicators-box">
-  <div class="grid icons">
-    <div class="grid__col grid__col--4-of-12 icon">
-      <div class="image money-{{ moneyState }}" ng-click="select('money')">
-      </div>
+<div class="content">
+  <div class="grid">
+    <div class="grid_col grid__col--10-of-12 grid__col--centered">
+      <p class="question">When you {{ craving }}, what are you <span class="emphasis">not okay</span> with?</p>
     </div>
-    <div class="grid__col grid__col--4-of-12 icon">
-      <div class="image time-{{ timeState }}" ng-click="select('time')">
+  </div>
+  
+  <div class="indicators-box">
+    <div class="grid icons">
+      <div class="grid__col grid__col--4-of-12 icon">
+        <div class="image money-{{ moneyState }}" ng-click="select('money')">
+        </div>
       </div>
-    </div>
-    <div class="grid__col grid__col--4-of-12 icon">
-      <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
+      <div class="grid__col grid__col--4-of-12 icon">
+        <div class="image time-{{ timeState }}" ng-click="select('time')">
+        </div>
       </div>
-    </div>
-  </div> <!-- end of .icons -->
-  <div class="grid questions">
-    <div class="grid__col grid__col--4-of-12 question">
-      <p>how much</p>
-      <div class="approx">
-        around
-        <span class="qty" ng-model="money">{{ money | currency}}</span>
+      <div class="grid__col grid__col--4-of-12 icon">
+        <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
+        </div>
       </div>
-      <div class="controls">
-        <div class="plus" ng-click="modify('more', 'money')">&plus;</div>
-        <div class="minus" ng-click="modify('less', 'money')">&minus;</div>
+    </div> <!-- end of .icons -->
+    <div class="grid questions">
+      <div class="grid__col grid__col--4-of-12 question">
+        <p>how much</p>
+        <div class="approx">
+          around
+          <span class="qty" ng-model="money">{{ money | currency}}</span>
+        </div>
+        <div class="controls">
+          <div class="plus" ng-click="modify('more', 'money')">&plus;</div>
+          <div class="minus" ng-click="modify('less', 'money')">&minus;</div>
+        </div>
       </div>
-    </div>
-    <div class="grid__col grid__col--4-of-12 question">
-      <p>how long</p>
-      <div class="approx">
-      	around
-        <span class="qty" ng-model="time">{{ time | HrsMins }}</span>
+      <div class="grid__col grid__col--4-of-12 question">
+        <p>how long</p>
+        <div class="approx">
+          around
+          <span class="qty" ng-model="time">{{ time | HrsMins }}</span>
+        </div>
+        <div class="controls">
+          <div class="plus" ng-click="modify('more', 'time')">&plus;</div>
+          <div class="minus" ng-click="modify('less', 'time')">&minus;</div>
+        </div>
       </div>
-      <div class="controls">
-        <div class="plus" ng-click="modify('more', 'time')">&plus;</div>
-        <div class="minus" ng-click="modify('less', 'time')">&minus;</div>
+      
+      <div class="grid__col grid__col--4-of-12 question">
+        <p>how often</p>
+        <div class="approx">
+          every
+          <span class="qty" ng-model="frequency">{{ frequency }}</span>
+          </div>
+        <div class="controls">
+          <div class="plus" ng-click="modify('more', 'frequency')">&plus;</div>
+          <div class="minus" ng-click="modify('less', 'frequency')">&minus;</div>
+        </div>
       </div>
-    </div>
+    </div> <!-- end of .questions -->
+  </div> <!-- end of .indicators-box -->
+</div>
 
-    <div class="grid__col grid__col--4-of-12 question">
-      <p>how often</p>
-      <div class="approx">
-        every
-        <span class="qty" ng-model="frequency">{{ frequency }}</span>
-      </div>
-      <div class="controls">
-        <div class="plus" ng-click="modify('more', 'frequency')">&plus;</div>
-        <div class="minus" ng-click="modify('less', 'frequency')">&minus;</div>
-      </div>
-    </div>
-  </div> <!-- end of .questions -->
-</div> <!-- end of .indicators-box -->
+<div class="footer">
+  <div class="navigation">
+    <ul>
+      <li><a class="nav" href="#">next <span class="arrows">&gt;</span></a><li>
+      <li><a class="nav" href="#"><span class="arrows">&lt</span> back</a><li>
+      <li><a class="nav" href="#">done <span class="arrows">&gt;</span></a><li>
+    </ul>
+  </div>
+</div>
 

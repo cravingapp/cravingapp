@@ -5,8 +5,29 @@ body {
 }
 
 p {
-  text-align: center;
-  font-size: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+.view-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+.content {
+    padding-bottom: 100px;
+}
+.footer {
+    margin-right: 50px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .craving-middle, .craving-top {
@@ -55,12 +76,6 @@ p {
 :-ms-input-placeholder {  
    color: rgba(46, 125, 225, .2);  
    text-align: center;
-}
-
-.container {
-  background-color: yellow;
-  height: 100px;
-  display: none;
 }
 
 .emphasis {
@@ -120,9 +135,10 @@ img {
   width: 190px;
 }
 
-.qty, .controls {
+.qty, .controls, .navigation {
   font-family: 'Lato';
   font-weight: 300;
+  font-size: 1.2em;
   color: rgb(46, 125, 225);
 }
 
@@ -134,11 +150,27 @@ img {
   margin-top: -1px;
   margin-left: 10px;
   display: inline-block;
-  font-size: 1.2em;
 }
 
 .plus, .minus {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.navigation ul {
+  list-style: none;
+}
+
+.navigation ul li {
+  display: inline-block;
+}
+
+.nav {
+  text-decoration: none;
+  color: rgb(46, 125, 225);
+  font-size: 1.2em;
+}
+
+.arrows {
 }
 
 /* 
