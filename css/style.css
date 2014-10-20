@@ -63,12 +63,6 @@ p {
   display: none;
 }
 
-/*
-.question {
-  margin-top: 100px;
-}
-*/
-
 .emphasis {
   color: #00AE8D;
   font-size: 1.7rem;
@@ -123,6 +117,7 @@ img {
   margin-left: 40px;
   float: left;
   font-size: 1.4em;
+  width: 190px;
 }
 
 .qty, .controls {

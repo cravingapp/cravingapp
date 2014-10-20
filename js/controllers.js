@@ -17,8 +17,8 @@ app.controller('CravingController', function($scope) {
 
     $scope.money = 5;
     $scope.time = 15;
-    $scope.frequency = 'hour';
-    var frequencyOpts = ['hour', 'day', 'other day', 'weekend', 'week'];
+    $scope.frequency = 'week';
+    var frequencyOpts = ['week', 'weekend', 'day', 'other day', 'hour'];
     
     $scope.modify = function(action, indicator) {
 	if (indicator == 'money') {
@@ -26,6 +26,9 @@ app.controller('CravingController', function($scope) {
 		$scope.money += 5;
 	    }
 	    else {
+		if ($scope.money == 5) {
+		    return;
+		}
 		$scope.money -= 5;
 	    }
 	}
@@ -33,6 +36,9 @@ app.controller('CravingController', function($scope) {
 	    if (action == 'more') {
 		$scope.time += 15;
 	    } else  {
+		if ($scope.time == 15) {
+		    return;
+		}
 		$scope.time -= 15;
 	    }
 	}
