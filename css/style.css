@@ -1,54 +1,63 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
 body {
-    font-family: 'danielblack';
+  font-family: 'danielblack';
 }
 
 p {
-    text-align: center;
-    font-size: 1.5em;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%
-}
-.view-wrapper {
-    min-height: 100%;
-    position: relative;
-}
-.content {
-    padding-bottom: 100px;
-}
-.footer {
-    margin-right: 50px;
-    height: 80px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%
 }
 
-.craving-middle, .craving-top {
+.view-wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.content {
+  padding-bottom: 100px;
+}
+
+header {
+  padding-top: 30px;
+}
+
+footer {
+  margin-right: 50px;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.back, .done {
+  display: none;
+}
+
+.craving {
     text-align: center;
     font-size: 3rem;
 }
-
-.craving-middle {
+.craving-top {
+    margin: 0 auto;
+    display: block;
+    
+}
+.craving-mid {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
 }
 
-.craving-top {
-    margin: 0 auto;
-    display: block;
-}
-
-.craving-middle input, .craving-top input {
+.craving-mid input, .craving-top input {
     width: 250px;
     outline: none;
     border: none;
@@ -138,7 +147,6 @@ img {
 .qty, .controls, .navigation {
   font-family: 'Lato';
   font-weight: 300;
-  font-size: 1.2em;
   color: rgb(46, 125, 225);
 }
 
@@ -167,10 +175,19 @@ img {
 .nav {
   text-decoration: none;
   color: rgb(46, 125, 225);
-  font-size: 1.2em;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.nav:hover {
+    opacity: .5;
 }
 
 .arrows {
+}
+
+.hidden {
+  background-color: yellow;
+  display: none;
 }
 
 /* 

@@ -1,8 +1,17 @@
 app.controller('CravingController', function($scope) { 
+    
+    // When start is clicked
+    $scope.position = 'mid';
+    $scope.contentHide = true;
+    $scope.start = function() {
+	$scope.position = 'top';
+	$scope.contentHide = false;
+    }
+    
+    // When an indicator image is clicked
     $scope.moneyState = "unselected";
     $scope.timeState = "unselected";
     $scope.frequencyState = "unselected";
-    
     $scope.select = function(indicator){
 	if (indicator === 'money') {
 	    $scope.moneyState = "selected";
@@ -15,6 +24,7 @@ app.controller('CravingController', function($scope) {
 	}
     }
 
+    // When controls (plus, minus) are clicked
     $scope.money = 5;
     $scope.time = 15;
     $scope.frequency = 'week';
