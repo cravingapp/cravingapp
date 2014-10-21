@@ -2,7 +2,6 @@ app.controller('CravingController', function($scope) {
     
     $scope.position = 'mid';
     $scope.contentHide = true;
-    $scope.controlsHide = [true, true, true];
     $scope.startHide = false;
     $scope.nextHide = true;
     $scope.backHide = true;
@@ -17,22 +16,19 @@ app.controller('CravingController', function($scope) {
     }
     
     // When an indicator image is clicked
-    $scope.moneyState = "unselected";
-    $scope.timeState = "unselected";
-    $scope.frequencyState = "unselected";
-    $scope.select = function(indicator){
-		if (indicator === 'money') {
-		    $scope.moneyState = "selected";
-		    $scope.controlsHide[0] = false;
-		}
-		if (indicator === 'time') {
-		    $scope.timeState = "selected";
-		    $scope.controlsHide[1] = false;
-		}
-		if (indicator === 'frequency') {
-		    $scope.frequencyState = "selected";
-			$scope.controlsHide[2] = false;
-		}
+    $scope.indicators = {
+	money: { state: 'unselected', controls: true },
+	time: { state: 'unselected', controls: true },
+	frequency: { state: 'unselected', controls: true }
+    }
+    $scope.select = function(indicator) {
+	if ($scope.indicators[indicator].state == 'selected') {
+	    $scope.indicators[indicator].state = 'unselected';
+	    $scope.indicators[indicator].controls = true;
+	} else {
+	    $scope.indicators[indicator].state = 'selected';
+	    $scope.indicators[indicator].controls = false;
+	}
     }
 
     // When controls (plus, minus) are clicked

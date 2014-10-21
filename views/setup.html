@@ -12,22 +12,22 @@
   <div class="indicators-box">
     <div class="grid icons">
       <div class="grid__col grid__col--4-of-12 icon">
-        <div class="image money-{{ moneyState }}" ng-click="select('money')">
+        <div class="image money-{{ indicators.money.state }}" ng-click="select('money')">
         </div>
       </div>
       <div class="grid__col grid__col--4-of-12 icon">
-        <div class="image time-{{ timeState }}" ng-click="select('time')">
+        <div class="image time-{{ indicators.time.state }}" ng-click="select('time')">
         </div>
       </div>
       <div class="grid__col grid__col--4-of-12 icon">
-        <div class="image frequency-{{ frequencyState }}" ng-click="select('frequency')">
+        <div class="image frequency-{{ indicators.frequency.state }}" ng-click="select('frequency')">
         </div>
       </div>
     </div> <!-- end of .icons -->
     <div class="grid questions">
       <div class="grid__col grid__col--4-of-12 question">
         <p>how much</p>
-        <div ng-class="{hidden:controlsHide[0]}">
+        <div ng-class="{ hidden:indicators.money.controls }">
           <div class="approx">
             around
             <span class="qty" ng-model="money">{{ money | currency}}</span>
@@ -41,7 +41,7 @@
 
       <div class="grid__col grid__col--4-of-12 question">
         <p>how long</p>
-        <div ng-class="{hidden:controlsHide[1]}">
+        <div ng-class="{ hidden:indicators.time.controls }">
           <div class="approx">
             around
             <span class="qty" ng-model="time">{{ time | HrsMins }}</span>
@@ -55,7 +55,7 @@
       
       <div class="grid__col grid__col--4-of-12 question">
         <p>how often</p>
-        <div ng-class="{hidden:controlsHide[2]}">
+        <div ng-class="{ hidden:indicators.frequency.controls }">
           <div class="approx">
             every
             <span class="qty" ng-model="frequency">{{ frequency }}</span>
