@@ -37,10 +37,6 @@ footer {
   right: 0;
 }
 
-/*.back, .done {
-  display: none;
-}*/
-
 .craving {
     text-align: center;
     font-size: 3rem;
@@ -170,6 +166,7 @@ img {
 
 .navigation ul li {
   display: inline-block;
+  margin-left: 10px;
 }
 
 .nav {

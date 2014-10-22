@@ -5,7 +5,7 @@
 <div class="content" ng-class="{hidden:contentHide}">
   <div class="grid">
     <div class="grid_col grid__col--10-of-12 grid__col--centered">
-      <p class="question">When you {{ craving }}, what are you <span class="emphasis">not okay</span> with?</p>
+      <p class="question">When you {{ craving }}, what are you <span class="emphasis">{{ okay }}</span> with?</p>
     </div>
   </div>
   
@@ -74,7 +74,7 @@
   <div class="navigation">
     <ul>
       <li><a ng-click="start()" ng-class="{hidden:startHide}" class="nav start">start <span class="arrows">&gt;</span></a></li>
-      <li><a ng-click="" ng-class="{hidden:nextHide}"class="nav next">next <span class="arrows">&gt;</span></a><li>
+      <li><a ng-click="next()" ng-class="{hidden:nextHide}"class="nav next">next <span class="arrows">&gt;</span></a><li>
       <li><a ng-click="" ng-class="{hidden:backHide}" class="nav back"><span class="arrows">&lt</span> back</a><li>
       <li><a ng-click="" ng-class="{hidden:doneHide}"class="nav done">done <span class="arrows">&gt;</span></a><li>
     </ul>

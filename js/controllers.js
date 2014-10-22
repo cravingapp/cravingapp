@@ -1,6 +1,7 @@
 app.controller('CravingController', function($scope) { 
     
     $scope.position = 'mid';
+    $scope.okay = 'not okay';
     $scope.contentHide = true;
     $scope.startHide = false;
     $scope.nextHide = true;
@@ -32,6 +33,16 @@ app.controller('CravingController', function($scope) {
 		$scope.contentHide = false;
 		$scope.startHide = true;
 		$scope.nextHide = false;
+    }
+
+    // When next is clicked
+    $scope.next = function() {
+		$scope.position = 'top';
+		$scope.startHide = true;
+		$scope.nextHide = true;
+		$scope.backHide = false;
+		$scope.doneHide = false;
+		$scope.okay = 'okay';
     }
     
     // When an indicator image is clicked
