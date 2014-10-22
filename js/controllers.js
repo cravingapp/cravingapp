@@ -7,6 +7,25 @@ app.controller('CravingController', function($scope) {
     $scope.backHide = true;
     $scope.doneHide = true;
 
+    // When the user types in the craving input
+    $scope.cravingWidth = 250;
+    $scope.cravingInput = function(event) {
+		if (event.keyCode == 13) {
+			$scope.position = 'top';
+			$scope.contentHide = false;
+			$scope.startHide = true;
+			$scope.nextHide = false;
+		}
+		else if (event.keyCode == 8){
+			if ($scope.cravingWidth >= 250){
+				$scope.cravingWidth -= 10;
+			}
+		} 
+		else {
+			$scope.cravingWidth += 10;
+		}
+    }
+
     // When start is clicked
     $scope.start = function() {
 		$scope.position = 'top';

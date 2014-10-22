@@ -1,5 +1,5 @@
 <header>
-  <div class="craving craving-{{ position }}">I am craving to <input type="text" placeholder="ex. eat out" dynamicInput="" ng-model="craving"></div>
+  <div class="craving craving-{{ position }}">I am craving to <input type="text" placeholder="ex. eat out" ng-keydown="cravingInput($event)" ng-model="craving" style="width: {{ cravingWidth }}px"></div>
 </header>
 
 <div class="content" ng-class="{hidden:contentHide}">
