@@ -21,7 +21,7 @@ app.controller('CravingController', function($scope) {
 				$scope.cravingWidth -= 10;
 			}
 		} 
-		else {
+		else if (event.keyCode >= 65 && event.keyCode <= 90) {
 			$scope.cravingWidth += 10;
 		}
     }
