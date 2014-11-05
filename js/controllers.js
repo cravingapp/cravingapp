@@ -8,6 +8,8 @@ app.controller('CravingController', function($scope) {
     $scope.backHide = true;
     $scope.doneHide = true;
     $scope.currentState = 'notokay';
+    $scope.name;
+    $scope.craving;
 
     $scope.indicators = {
 	money: {
@@ -37,6 +39,21 @@ app.controller('CravingController', function($scope) {
 	}
     }
     
+    // Wehn the user types in name
+    $scope.nameWidth = 250;
+    $scope.nameInput = function(event) {
+		if (event.keyCode == 13) {
+    		document.getElementById("craving").focus();
+		}
+		else if (event.keyCode == 8){
+			if ($scope.cravingWidth >= 250){
+				$scope.cravingWidth -= 10;
+			}
+		} 
+		else if (event.keyCode >= 65 && event.keyCode <= 90) {
+			$scope.cravingWidth += 10;
+		}
+    }
 
     // When the user types in the craving input
     $scope.cravingWidth = 250;

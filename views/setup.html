@@ -1,5 +1,10 @@
 <header>
-  <div class="craving craving-{{ position }}">I am craving to <input type="text" placeholder="ex. eat out" ng-keydown="cravingInput($event)" ng-model="craving" style="width: {{ cravingWidth }}px"></div>
+  <div class="craving name-{{ position }}">
+    My name is <input type="text" placeholder="ex. Marcelus" ng-keydown="nameInput($event)" ng-model="name" style="width: {{ cravingWidth }}px">
+  </div>
+  <div class="craving craving-{{ position }}">
+    I am craving to <input id="craving" type="text" placeholder="ex. eat out" ng-keydown="cravingInput($event)" ng-model="craving" style="width: {{ cravingWidth }}px">
+  </div>
 </header>
 
 <div class="content" ng-class="{hidden:contentHide}">

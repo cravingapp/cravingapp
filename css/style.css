@@ -46,6 +46,12 @@ footer {
     display: block;
     
 }
+.name-mid, .craving-mid {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .craving-mid {
     position: fixed;
     top: 50%;
@@ -53,7 +59,7 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-.craving-mid input, .craving-top input {
+.craving-mid input, .name-mid input, .craving-top input {
     width: 250px;
     outline: none;
     border: none;
