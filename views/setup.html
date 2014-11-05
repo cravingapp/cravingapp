@@ -5,7 +5,7 @@
 <div class="content" ng-class="{hidden:contentHide}">
   <div class="grid">
     <div class="grid_col grid__col--10-of-12 grid__col--centered">
-      <p class="question">When you {{ craving }}, what are you <span class="emphasis">{{ okay }}</span> with?</p>
+      <p class="question">When you {{ craving }}, what are you <span class="emphasis">{{ label }}</span> with?</p>
     </div>
   </div>
   
@@ -30,11 +30,11 @@
         <div ng-class="{ hidden:indicators.money.controls }">
           <div class="approx">
             around
-            <span class="qty" ng-model="money">{{ money | currency}}</span>
+            <span class="qty" ng-model="money">{{ states[currentState].money | currency}}</span>
           </div>
           <div class="controls">
-            <div class="plus" ng-click="modify('more', 'money')">&plus;</div>
-            <div class="minus" ng-click="modify('less', 'money')">&minus;</div>
+            <div class="plus" ng-click="modify('more', 'money', currentState)">&plus;</div>
+            <div class="minus" ng-click="modify('less', 'money', currentState)">&minus;</div>
           </div>
         </div>
       </div>
@@ -44,11 +44,11 @@
         <div ng-class="{ hidden:indicators.time.controls }">
           <div class="approx">
             around
-            <span class="qty" ng-model="time">{{ time | HrsMins }}</span>
+            <span class="qty" ng-model="time">{{ states[currentState].time | HrsMins }}</span>
           </div>
           <div class="controls">
-            <div class="plus" ng-click="modify('more', 'time')">&plus;</div>
-            <div class="minus" ng-click="modify('less', 'time')">&minus;</div>
+            <div class="plus" ng-click="modify('more', 'time', currentState)">&plus;</div>
+            <div class="minus" ng-click="modify('less', 'time', currentState)">&minus;</div>
           </div>
         </div>
       </div>
@@ -58,11 +58,11 @@
         <div ng-class="{ hidden:indicators.frequency.controls }">
           <div class="approx">
             every
-            <span class="qty" ng-model="frequency">{{ frequency }}</span>
+            <span class="qty" ng-model="frequency">{{ states[currentState].frequency }}</span>
             </div>
           <div class="controls">
-            <div class="plus" ng-click="modify('more', 'frequency')">&plus;</div>
-            <div class="minus" ng-click="modify('less', 'frequency')">&minus;</div>
+            <div class="plus" ng-click="modify('more', 'frequency', currentState)">&plus;</div>
+            <div class="minus" ng-click="modify('less', 'frequency', currentState)">&minus;</div>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
     <ul>
       <li><a ng-click="start()" ng-class="{hidden:startHide}" class="nav start">start <span class="arrows">&gt;</span></a></li>
       <li><a ng-click="next()" ng-class="{hidden:nextHide}"class="nav next">next <span class="arrows">&gt;</span></a><li>
-      <li><a ng-click="" ng-class="{hidden:backHide}" class="nav back"><span class="arrows">&lt</span> back</a><li>
+      <li><a ng-click="back()" ng-class="{hidden:backHide}" class="nav back"><span class="arrows">&lt</span> back</a><li>
       <li><a ng-click="" ng-class="{hidden:doneHide}"class="nav done">done <span class="arrows">&gt;</span></a><li>
     </ul>
   </div>
