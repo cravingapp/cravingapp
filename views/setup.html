@@ -1,6 +1,6 @@
-<header>
+<header ng-class="{hidden:headerHide}">
   <div class="craving name-{{ position }}">
-    My name is <input type="text" placeholder="ex. Marcelus" ng-keydown="nameInput($event)" ng-model="name" style="width: {{ cravingWidth }}px">
+    My name is <input type="text" placeholder="ex. Marcelus" ng-keydown="nameInput($event)" ng-model="name" style="width: {{ nameWidth }}px">
   </div>
   <div class="craving craving-{{ position }}">
     I am craving to <input id="craving" type="text" placeholder="ex. eat out" ng-keydown="cravingInput($event)" ng-model="craving" style="width: {{ cravingWidth }}px">
@@ -74,16 +74,16 @@
     </div> <!-- end of .questions -->
   </div> <!-- end of .indicators-box -->
 
-  
-  <div class="craving-controls">
-    <p>Thanks {{ name }} !</p>
-    <p>Whenever you're craving to {{ craving }},</p>
-    <p>hit this button</p>
-    <div class="imcraving-button">
-      <button class="imcraving">I'm craving!</button>
-    </div>
-  </div>
+</div> <!-- end of .content -->
 
+<div class="craving-controls" ng-class="{hidden:textHide}">
+  <p>Thanks  {{ name }} !</p>
+  <p>Now let's get started.</p>
+
+  <p>Whenever you're craving to {{ craving }}, hit this button.</p>
+  <div class="imcraving-button">
+    <button class="imcraving">I'm craving!</button>
+  </div>
 </div>
 
 <footer>

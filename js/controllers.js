@@ -1,15 +1,18 @@
 app.controller('CravingController', function($scope) { 
     
-    $scope.position = 'mid';
-    $scope.label = 'not okay';
     $scope.contentHide = true;
+    $scope.headerHide = false;
     $scope.startHide = false;
     $scope.nextHide = true;
     $scope.backHide = true;
     $scope.doneHide = true;
+    $scope.textHide = true;
+    $scope.position = 'mid';
+    $scope.label = 'not okay';
     $scope.currentState = 'notokay';
     $scope.name;
     $scope.craving;
+   
 
     $scope.indicators = {
 	money: {
@@ -39,19 +42,19 @@ app.controller('CravingController', function($scope) {
 	}
     }
     
-    // Wehn the user types in name
-    $scope.nameWidth = 250;
+    // When the user types in name
+    $scope.nameWidth = 280;
     $scope.nameInput = function(event) {
 		if (event.keyCode == 13) {
     		document.getElementById("craving").focus();
 		}
 		else if (event.keyCode == 8){
-			if ($scope.cravingWidth >= 250){
-				$scope.cravingWidth -= 10;
+			if ($scope.nameWidth >= 250){
+				$scope.nameWidth -= 10;
 			}
 		} 
 		else if (event.keyCode >= 65 && event.keyCode <= 90) {
-			$scope.cravingWidth += 10;
+			$scope.nameWidth += 10;
 		}
     }
 
@@ -93,12 +96,6 @@ app.controller('CravingController', function($scope) {
 		$scope.currentState = 'okay';
     }
 
-    // When done is clicked
-    $scope.done = function() {
-	$scope.backHide = true;
-	$scope.doneHide = true;
-    }
-
     // When back is clicked
     $scope.back = function() {
 		$scope.nextHide = false;
@@ -107,7 +104,16 @@ app.controller('CravingController', function($scope) {
 		$scope.label = 'not okay';
 		$scope.currentState = 'notokay';
     }
-    
+
+    // When done is clicked
+    $scope.done = function() {
+    	$scope.headerHide = true;
+    	$scope.contentHide = true;
+		$scope.backHide = true;
+		$scope.doneHide = true;
+		$scope.textHide = false;
+    }
+
     $scope.select = function(indicator) {
 	if ($scope.indicators[indicator].state == 'selected') {
 	    $scope.indicators[indicator].state = 'unselected';
