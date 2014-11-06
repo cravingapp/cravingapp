@@ -1,8 +1,8 @@
-<header ng-class="{hidden:headerHide}">
-  <div class="craving name-{{ position }}">
+<header>
+  <div class="craving name-{{ position }}" ng-class="{hidden:nameHide}">
     My name is <input type="text" placeholder="ex. Marcelus" ng-keydown="nameInput($event)" ng-model="name" style="width: {{ nameWidth }}px">
   </div>
-  <div class="craving craving-{{ position }}">
+  <div class="craving craving-{{ position }}" ng-class="{hidden:cravingHide}">
     I am craving to <input id="craving" type="text" placeholder="ex. eat out" ng-keydown="cravingInput($event)" ng-model="craving" style="width: {{ cravingWidth }}px">
   </div>
 </header>

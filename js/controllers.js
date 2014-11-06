@@ -1,7 +1,8 @@
 app.controller('CravingController', function($scope) { 
     
     $scope.contentHide = true;
-    $scope.headerHide = false;
+    $scope.nameHide = false;
+    $scope.cravingHide = false;
     $scope.startHide = false;
     $scope.nextHide = true;
     $scope.backHide = true;
@@ -62,10 +63,13 @@ app.controller('CravingController', function($scope) {
     $scope.cravingWidth = 250;
     $scope.cravingInput = function(event) {
 		if (event.keyCode == 13) {
-			$scope.position = 'top';
-			$scope.contentHide = false;
-			$scope.startHide = true;
-			$scope.nextHide = false;
+		    $scope.position = 'top';
+		    $scope.contentHide = false;
+		    $scope.startHide = true;
+		    $scope.nextHide = false;
+		    $scope.nameHide = true;
+		    $scope.cravingHide = false;
+		    
 		}
 		else if (event.keyCode == 8){
 			if ($scope.cravingWidth >= 250){
@@ -83,6 +87,8 @@ app.controller('CravingController', function($scope) {
 		$scope.contentHide = false;
 		$scope.startHide = true;
 		$scope.nextHide = false;
+	$scope.nameHide = true;
+	$scope.cravingHide = false;
     }
 
     // When next is clicked
@@ -107,7 +113,8 @@ app.controller('CravingController', function($scope) {
 
     // When done is clicked
     $scope.done = function() {
-    	$scope.headerHide = true;
+    	$scope.nameHide = true;
+	$scope.cravingHide = true;
     	$scope.contentHide = true;
 		$scope.backHide = true;
 		$scope.doneHide = true;
