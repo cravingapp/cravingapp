@@ -93,6 +93,12 @@ app.controller('CravingController', function($scope) {
 		$scope.currentState = 'okay';
     }
 
+    // When done is clicked
+    $scope.done = function() {
+	$scope.backHide = true;
+	$scope.doneHide = true;
+    }
+
     // When back is clicked
     $scope.back = function() {
 		$scope.nextHide = false;

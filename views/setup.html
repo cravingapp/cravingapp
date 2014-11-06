@@ -73,6 +73,17 @@
       </div>
     </div> <!-- end of .questions -->
   </div> <!-- end of .indicators-box -->
+
+  
+  <div class="craving-controls">
+    <p>Thanks {{ name }} !</p>
+    <p>Whenever you're craving to {{ craving }},</p>
+    <p>hit this button</p>
+    <div class="imcraving-button">
+      <button class="imcraving">I'm craving!</button>
+    </div>
+  </div>
+
 </div>
 
 <footer>
@@ -81,7 +92,7 @@
       <li><a ng-click="start()" ng-class="{hidden:startHide}" class="nav start">start <span class="arrows">&gt;</span></a></li>
       <li><a ng-click="next()" ng-class="{hidden:nextHide}"class="nav next">next <span class="arrows">&gt;</span></a><li>
       <li><a ng-click="back()" ng-class="{hidden:backHide}" class="nav back"><span class="arrows">&lt</span> back</a><li>
-      <li><a ng-click="" ng-class="{hidden:doneHide}"class="nav done">done <span class="arrows">&gt;</span></a><li>
+      <li><a ng-click="done()" ng-class="{hidden:doneHide}"class="nav done">done <span class="arrows">&gt;</span></a><li>
     </ul>
   </div>
 </footer>

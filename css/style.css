@@ -193,6 +193,27 @@ img {
   display: none;
 }
 
+.imcraving-button {
+    width: 100%;
+}
+
+.imcraving {
+    display: block;
+    height: 200px;
+    width: 200px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 1px #000;
+    background-color: #2E7DE1;
+    color: #fff;
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 42px;
+    outline: 0;
+}
+
+
 /* 
 FIX: border-image in the time box
 FIX: center .indicator boxes
