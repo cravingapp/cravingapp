@@ -1,21 +1,75 @@
 app.controller('CravingController', function($scope) { 
     
-    $scope.position = 'mid';
-    $scope.okay = 'not okay';
     $scope.contentHide = true;
+    $scope.nameHide = false;
+    $scope.cravingHide = false;
     $scope.startHide = false;
     $scope.nextHide = true;
     $scope.backHide = true;
     $scope.doneHide = true;
+    $scope.textHide = true;
+    $scope.position = 'mid';
+    $scope.label = 'not okay';
+    $scope.currentState = 'notokay';
+    $scope.name;
+    $scope.craving;
+   
+
+    $scope.indicators = {
+	money: {
+	    state: 'unselected',
+	    controls: true,
+	},
+	time: {
+	    state: 'unselected',
+	    controls: true,
+	},
+	frequency: {
+	    state: 'unselected',
+	    controls: true,
+	}
+    }
+
+    $scope.states = {
+	okay : {
+	    money : 5,
+	    time: 15,
+	    frequency: 'week'
+	},
+	notokay : {
+	    money : 5,
+	    time: 15,
+	    frequency: 'week'
+	}
+    }
+    
+    // When the user types in name
+    $scope.nameWidth = 280;
+    $scope.nameInput = function(event) {
+		if (event.keyCode == 13) {
+    		document.getElementById("craving").focus();
+		}
+		else if (event.keyCode == 8){
+			if ($scope.nameWidth >= 250){
+				$scope.nameWidth -= 10;
+			}
+		} 
+		else if (event.keyCode >= 65 && event.keyCode <= 90) {
+			$scope.nameWidth += 10;
+		}
+    }
 
     // When the user types in the craving input
     $scope.cravingWidth = 250;
     $scope.cravingInput = function(event) {
 		if (event.keyCode == 13) {
-			$scope.position = 'top';
-			$scope.contentHide = false;
-			$scope.startHide = true;
-			$scope.nextHide = false;
+		    $scope.position = 'top';
+		    $scope.contentHide = false;
+		    $scope.startHide = true;
+		    $scope.nextHide = false;
+		    $scope.nameHide = true;
+		    $scope.cravingHide = false;
+		    
 		}
 		else if (event.keyCode == 8){
 			if ($scope.cravingWidth >= 250){
@@ -33,6 +87,8 @@ app.controller('CravingController', function($scope) {
 		$scope.contentHide = false;
 		$scope.startHide = true;
 		$scope.nextHide = false;
+	$scope.nameHide = true;
+	$scope.cravingHide = false;
     }
 
     // When next is clicked
@@ -42,15 +98,29 @@ app.controller('CravingController', function($scope) {
 		$scope.nextHide = true;
 		$scope.backHide = false;
 		$scope.doneHide = false;
-		$scope.okay = 'okay';
+		$scope.label = 'okay';
+		$scope.currentState = 'okay';
     }
-    
-    // When an indicator image is clicked
-    $scope.indicators = {
-	money: { state: 'unselected', controls: true },
-	time: { state: 'unselected', controls: true },
-	frequency: { state: 'unselected', controls: true }
+
+    // When back is clicked
+    $scope.back = function() {
+		$scope.nextHide = false;
+		$scope.backHide = true;
+		$scope.doneHide = true;
+		$scope.label = 'not okay';
+		$scope.currentState = 'notokay';
     }
+
+    // When done is clicked
+    $scope.done = function() {
+    	$scope.nameHide = true;
+	$scope.cravingHide = true;
+    	$scope.contentHide = true;
+		$scope.backHide = true;
+		$scope.doneHide = true;
+		$scope.textHide = false;
+    }
+
     $scope.select = function(indicator) {
 	if ($scope.indicators[indicator].state == 'selected') {
 	    $scope.indicators[indicator].state = 'unselected';
@@ -62,47 +132,44 @@ app.controller('CravingController', function($scope) {
     }
 
     // When controls (plus, minus) are clicked
-    $scope.money = 5;
-    $scope.time = 15;
-    $scope.frequency = 'week';
     var frequencyOpts = ['week', 'weekend', 'day', 'other day', 'hour'];
     
-    $scope.modify = function(action, indicator) {
+    $scope.modify = function(action, indicator, state) {
 	if (indicator == 'money') {
 	    if (action == 'more') {
-		$scope.money += 5;
+		$scope.states[state].money += 5;
 	    }
 	    else {
-		if ($scope.money == 5) {
+		if ($scope.states[state].money == 5) {
 		    return;
 		}
-		$scope.money -= 5;
+		$scope.states[state].money -= 5;
 	    }
 	}
 	if (indicator == 'time') {
 	    if (action == 'more') {
-		$scope.time += 15;
+		$scope.states[state].time += 15;
 	    } else  {
-		if ($scope.time == 15) {
+		if ($scope.states[state].time == 15) {
 		    return;
 		}
-		$scope.time -= 15;
+		$scope.states[state].time -= 15;
 	    }
 	}
 	if (indicator == 'frequency') {
-	    var currentIndex = frequencyOpts.indexOf($scope.frequency);
-	    if (action == 'more') {
-		if (currentIndex == frequencyOpts.length - 1) {
-		    $scope.frequency = frequencyOpts[4];
-		    return;
-		}
-		$scope.frequency = frequencyOpts[++currentIndex];
+	    var currentIndex = frequencyOpts.indexOf($scope.states[state].frequency);
+		    if (action == 'more') {
+				if (currentIndex == frequencyOpts.length - 1) {
+				    $scope.states[state].frequency = frequencyOpts[4];
+				    return;
+			}
+			$scope.states[state].frequency = frequencyOpts[++currentIndex];
 	    } else {
-		if (currentIndex == 0) {
-		    $scope.frequency = frequencyOpts[0];
-		    return;
-		}
-		$scope.frequency = frequencyOpts[--currentIndex];
+			if (currentIndex == 0) {
+			    $scope.states[state].frequency = frequencyOpts[0];
+			    return;
+			}
+			$scope.states[state].frequency = frequencyOpts[--currentIndex];
 	    }
 	}
     }
