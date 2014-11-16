@@ -1,0 +1,5 @@
+<header class="craving">how about...</header>
+<div class="events" ng-repeat="event in events">
+  <span style="font-weight:400"> {{ event.time | date:'medium' }} </span><br> 
+  <a href="{{ event.event_url }}" target="_blank"> {{ event.name }} </a>
+</div>

@@ -16,6 +16,16 @@ body {
   height: 100%
 }
 
+a {
+  text-decoration: none;
+  font-family: 'Lato';
+  font-weight: 300;
+  color: rgb(46, 125, 225);
+}
+a:hover {
+  color: rgba(46, 125, 225, 0.5); 
+}
+
 .view-wrapper {
   min-height: 100%;
   position: relative;
@@ -185,6 +195,13 @@ img {
 .hidden {
   background-color: yellow;
   display: none;
+}
+
+.events {
+  font-family: 'Lato';
+  font-weight: 300;
+  color: rgb(46, 125, 225);
+  margin-bottom: 20px;
 }
 
 /* 
